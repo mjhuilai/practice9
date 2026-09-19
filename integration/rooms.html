@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>自习室查询 · 迷你版校园信息中心</title>
+  <link href="libs/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+  <div id="offline-tip">⚠ 当前网络已断开，部分数据可能无法加载</div>
+
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: var(--campus-primary);">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">🏫 校园信息中心</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#mainNav" aria-controls="mainNav"
+              aria-expanded="false" aria-label="切换导航">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">首页</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="rooms.html">自习室</a></li>
+          <li class="nav-item"><a class="nav-link" href="stats.html">统计</a></li>
+          <li class="nav-item"><a class="nav-link" href="three-d/scene.html">校园三维</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container py-4">
+    <h1 class="h3 mb-3">自习室查询</h1>
+
+    <!-- 占位：第二步在此实现按楼层 / 开放状态即时过滤自习室列表 -->
+    <p class="alert alert-secondary">
+      【占位内容】第二步将在此实现：复用课堂五的筛选模式，按楼层 / 开放状态过滤自习室列表（数据写死在 JS 数组中）。
+    </p>
+  </main>
+
+  <footer class="py-3 mt-4">
+    <div class="container d-flex flex-wrap gap-2 justify-content-between align-items-center">
+      <span>数据来源：课程演示数据（data/data.json）</span>
+      <span id="console-badge" class="badge bg-success">Console 无报错</span>
+    </div>
+  </footer>
+
+  <script src="libs/bootstrap.bundle.min.js"></script>
+  <script src="js/common.js"></script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>首页 · 迷你版校园信息中心</title>
+  <!-- 引入 Bootstrap 与自定义 CSS -->
+  <link href="libs/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+  <!-- 断网提示横幅（默认隐藏，断网时由 common.js 显示） -->
+  <div id="offline-tip">⚠ 当前网络已断开，部分数据可能无法加载</div>
+
+  <!-- 导航栏：首页、自习室、统计、校园三维 四个入口 -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: var(--campus-primary);">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">🏫 校园信息中心</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#mainNav" aria-controls="mainNav"
+              aria-expanded="false" aria-label="切换导航">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">首页</a></li>
+          <li class="nav-item"><a class="nav-link" href="rooms.html">自习室</a></li>
+          <li class="nav-item"><a class="nav-link" href="stats.html">统计</a></li>
+          <li class="nav-item"><a class="nav-link" href="three-d/scene.html">校园三维</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container py-4">
+    <!-- 横幅 -->
+    <section class="hero">
+      <h1 class="h3">迷你版校园公共信息与数据展示中心</h1>
+      <p>课堂案例复现：Bootstrap 导航与卡片 · 自习室筛选交互 · ECharts 使用量图表 · A-Frame 校园三维导览</p>
+    </section>
+
+    <!-- 首页卡片区：四个模块入口 -->
+    <section class="row g-4">
+      <div class="col-sm-6 col-lg-3">
+        <a class="card module-card" href="index.html">
+          <div class="card-body">
+            <p class="icon">🏠</p>
+            <h2 class="h5 card-title">首页</h2>
+            <p class="card-text">统一入口与导航，汇总各模块位置。</p>
+          </div>
+        </a>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <a class="card module-card" href="rooms.html">
+          <div class="card-body">
+            <p class="icon">📖</p>
+            <h2 class="h5 card-title">自习室查询</h2>
+            <p class="card-text">按楼层 / 开放状态即时筛选自习室列表。</p>
+          </div>
+        </a>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <a class="card module-card" href="stats.html">
+          <div class="card-body">
+            <p class="icon">📊</p>
+            <h2 class="h5 card-title">使用统计</h2>
+            <p class="card-text">加载 data.json，ECharts 渲染使用量柱状图。</p>
+          </div>
+        </a>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <a class="card module-card" href="three-d/scene.html">
+          <div class="card-body">
+            <p class="icon">🧭</p>
+            <h2 class="h5 card-title">校园三维</h2>
+            <p class="card-text">A-Frame 三维场景，校园地标三维导览入口。</p>
+          </div>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="py-3 mt-4">
+    <div class="container d-flex flex-wrap gap-2 justify-content-between align-items-center">
+      <span>数据来源：课程演示数据（data/data.json）</span>
+      <span id="console-badge" class="badge bg-success">Console 无报错</span>
+    </div>
+  </footer>
+
+  <script src="libs/bootstrap.bundle.min.js"></script>
+  <script src="js/common.js"></script>
+</body>
+</html>
