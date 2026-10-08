@@ -46,6 +46,14 @@
         <p id="data-source" class="small text-muted mt-2 mb-0">数据来源：加载中…</p>
       </div>
     </section>
+
+    <!-- 第二类图表：Chart.js 环形图（使用量分布） -->
+    <section class="card mt-3">
+      <div class="card-body">
+        <h2 class="h5 mb-2">使用量占比分布（Chart.js 环形图）</h2>
+        <div class="chart-box"><canvas id="pie-chart"></canvas></div>
+      </div>
+    </section>
   </main>
 
   <footer class="py-3 mt-4">
@@ -57,6 +65,7 @@
 
   <script src="libs/bootstrap.bundle.min.js"></script>
   <script src="libs/echarts.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="js/common.js"></script>
   <script src="js/stats.js"></script>
 </body>

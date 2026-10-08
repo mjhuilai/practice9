@@ -7,6 +7,7 @@
 const statusEl = document.querySelector('#status');
 const sourceEl = document.querySelector('#data-source');
 let chart = null;
+let pieChart = null;
 
 const renderChart = (data) => {
   if (chart === null) {
@@ -40,6 +41,30 @@ const renderChart = (data) => {
   }, true);
 };
 
+const renderPieChart = (data) => {
+  const ctx = document.querySelector('#pie-chart');
+  if (pieChart !== null) pieChart.destroy();
+  pieChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      labels: data.rooms,
+      datasets: [{
+        label: '使用量',
+        data: data.counts,
+        borderWidth: 1
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { position: 'right' },
+        title: { display: true, text: '各自习室使用量占比' }
+      }
+    }
+  });
+};
+
 const loadData = async () => {
   statusEl.style.display = 'none';
   statusEl.classList.remove('alert-danger', 'alert-warning');
@@ -61,6 +86,7 @@ const loadData = async () => {
 
     sourceEl.textContent = '数据来源：' + data.source + '；单位：' + data.unit;
     renderChart(data);
+    renderPieChart(data);
   } catch (error) {
     // 断网 / 文件缺失时的失败提示（已捕获，不会在 Console 产生未处理错误）
     statusEl.textContent = '数据加载失败（可能处于断网状态）：' + error.message;
